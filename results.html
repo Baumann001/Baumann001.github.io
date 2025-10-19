@@ -18,57 +18,105 @@
         </div>
 
         <div class="filter-bar">
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">Accommodations</button>
-            <button class="filter-btn">Restaurants</button>
-            <button class="filter-btn">Entertainment</button>
+            <button class="filter-btn active">Todos</button>
+            <button class="filter-btn">Acomodações</button>
+            <button class="filter-btn">Restaurantes</button>
+            <button class="filter-btn">Entretenimento</button>
             <button class="filter-btn">$</button>
             <button class="filter-btn">$$</button>
             <button class="filter-btn">$$$</button>
-            <button class="filter-btn">Accessible</button>
+            <button class="filter-btn">Acessível</button>
         </div>
 
         <section>
-            <h2 style="color: #FFFFFF; margin-bottom: 16px; font-size: 20px;">Accommodations</h2>
+            <h2 style="color: #FFFFFF; margin-bottom: 16px; font-size: 20px;">Acomodações</h2>
 
             <div class="card">
-                <h3 class="card-title">Youth Hostel Paris</h3>
-                <p class="card-description">Budget-friendly hostel for young travelers. Distance: 1.5 km | Price: $ | Age: 18-35</p>
-                <button class="btn">Book Now</button>
+                <div class="card-image">
+                    <i class="fas fa-hotel" style="font-size: 48px; color: #8A2BE2;"></i>
+                </div>
+                <h3 class="card-title">Hotel Plaza Blumenau</h3>
+                <p class="card-description">Hotel confortável com comodidades modernas e excelente atendimento.</p>
+                <div class="card-details">
+                    <span class="location">Centro</span>
+                    <span class="distance">1.5 km</span>
+                    <span class="price">$$</span>
+                </div>
+                <button class="btn" onclick="window.location.href='details.html'">Ver Detalhes</button>
             </div>
 
             <div class="card">
-                <h3 class="card-title">Family Hotel Ritz</h3>
-                <p class="card-description">Luxury hotel with family suites and kid-friendly amenities. Distance: 1.8 km | Price: $$$ | Age: All ages</p>
-                <button class="btn">Book Now</button>
+                <div class="card-image">
+                    <i class="fas fa-bed" style="font-size: 48px; color: #8A2BE2;"></i>
+                </div>
+                <h3 class="card-title">Hostel Joinville</h3>
+                <p class="card-description">Hostel econômico para jovens viajantes.</p>
+                <div class="card-details">
+                    <span class="location">Centro</span>
+                    <span class="distance">1.8 km</span>
+                    <span class="price">$</span>
+                </div>
+                <button class="btn" onclick="window.location.href='details.html'">Ver Detalhes</button>
             </div>
 
-            <h2 style="color: #FFFFFF; margin: 24px 0 16px; font-size: 20px;">Restaurants</h2>
+            <h2 style="color: #FFFFFF; margin: 24px 0 16px; font-size: 20px;">Restaurantes</h2>
 
             <div class="card">
-                <h3 class="card-title">Café de Flore</h3>
-                <p class="card-description">Historic café with excellent coffee and light meals. Distance: 1.2 km | Price: $$ | Age: 16+</p>
-                <button class="btn">Reserve Table</button>
+                <div class="card-image">
+                    <i class="fas fa-utensils" style="font-size: 48px; color: #8A2BE2;"></i>
+                </div>
+                <h3 class="card-title">Restaurante Villa Hamburg</h3>
+                <p class="card-description">Culinária alemã tradicional com atmosfera acolhedora.</p>
+                <div class="card-details">
+                    <span class="location">Centro</span>
+                    <span class="distance">1.2 km</span>
+                    <span class="price">$$</span>
+                </div>
+                <button class="btn" onclick="window.location.href='details.html'">Reservar Mesa</button>
             </div>
 
             <div class="card">
-                <h3 class="card-title">Kid-Friendly Bistro</h3>
-                <p class="card-description">Family-oriented restaurant with children's menu. Distance: 0.8 km | Price: $$ | Age: All ages</p>
-                <button class="btn">Reserve Table</button>
+                <div class="card-image">
+                    <i class="fas fa-coffee" style="font-size: 48px; color: #8A2BE2;"></i>
+                </div>
+                <h3 class="card-title">Café com Chocolate</h3>
+                <p class="card-description">Café aconchegante com opções para crianças.</p>
+                <div class="card-details">
+                    <span class="location">Centro</span>
+                    <span class="distance">0.8 km</span>
+                    <span class="price">$$</span>
+                </div>
+                <button class="btn" onclick="window.location.href='details.html'">Reservar Mesa</button>
             </div>
 
-            <h2 style="color: #FFFFFF; margin: 24px 0 16px; font-size: 20px;">Entertainment</h2>
+            <h2 style="color: #FFFFFF; margin: 24px 0 16px; font-size: 20px;">Entretenimento</h2>
 
             <div class="card">
-                <h3 class="card-title">Louvre Museum</h3>
-                <p class="card-description">World's largest art museum, home to the Mona Lisa. Distance: 2.1 km | Price: $$ | Age: 12+</p>
-                <button class="btn">View Details</button>
+                <div class="card-image">
+                    <i class="fas fa-building" style="font-size: 48px; color: #8A2BE2;"></i>
+                </div>
+                <h3 class="card-title">Expoville</h3>
+                <p class="card-description">Centro de convenções com eventos culturais e shows.</p>
+                <div class="card-details">
+                    <span class="location">Centro</span>
+                    <span class="distance">2.1 km</span>
+                    <span class="price">$$</span>
+                </div>
+                <button class="btn" onclick="window.location.href='details.html'">Ver Detalhes</button>
             </div>
 
             <div class="card">
-                <h3 class="card-title">Le Jardin des Tuileries</h3>
-                <p class="card-description">Beautiful French garden, perfect for a relaxing stroll. Distance: 0.5 km | Price: Free | Age: All ages</p>
-                <button class="btn">View Details</button>
+                <div class="card-image">
+                    <i class="fas fa-tree" style="font-size: 48px; color: #8A2BE2;"></i>
+                </div>
+                <h3 class="card-title">Parque Zoobotânico Joinville</h3>
+                <p class="card-description">Parque com zoológico e jardim botânico, perfeito para passear.</p>
+                <div class="card-details">
+                    <span class="location">Centro</span>
+                    <span class="distance">0.5 km</span>
+                    <span class="price">Grátis</span>
+                </div>
+                <button class="btn" onclick="window.location.href='details.html'">Ver Detalhes</button>
             </div>
         </section>
     </div>
