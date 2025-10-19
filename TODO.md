@@ -9,3 +9,5 @@
 - [x] Create Details Screen (details.html) - large image, title, description, reviews, reserve button
 - [x] Create Profile Screen (profile.html) - user info, past trips, preferences
 - [x] Test all screens using browser_action (skipped due to tool disabled)
+- [x] Switch from dark theme to light theme in CSS
+- [x] Update color palette to Webmotors style (red theme)

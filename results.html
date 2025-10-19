@@ -31,9 +31,9 @@
         <section>
             <h2 style="color: #FFFFFF; margin-bottom: 16px; font-size: 20px;">Acomodações</h2>
 
-            <div class="card">
+            <div class="card" data-category="acomodações" data-price="$$" data-accessible="false">
                 <div class="card-image">
-                    <i class="fas fa-hotel" style="font-size: 48px; color: #8A2BE2;"></i>
+                    <i class="fas fa-hotel" style="font-size: 48px;"></i>
                 </div>
                 <h3 class="card-title">Hotel Plaza Blumenau</h3>
                 <p class="card-description">Hotel confortável com comodidades modernas e excelente atendimento.</p>
@@ -45,9 +45,9 @@
                 <button class="btn" onclick="window.location.href='details.html'">Ver Detalhes</button>
             </div>
 
-            <div class="card">
+            <div class="card" data-category="acomodações" data-price="$" data-accessible="false">
                 <div class="card-image">
-                    <i class="fas fa-bed" style="font-size: 48px; color: #8A2BE2;"></i>
+                    <i class="fas fa-bed" style="font-size: 48px;"></i>
                 </div>
                 <h3 class="card-title">Hostel Joinville</h3>
                 <p class="card-description">Hostel econômico para jovens viajantes.</p>
@@ -61,9 +61,9 @@
 
             <h2 style="color: #FFFFFF; margin: 24px 0 16px; font-size: 20px;">Restaurantes</h2>
 
-            <div class="card">
+            <div class="card" data-category="restaurantes" data-price="$$" data-accessible="false">
                 <div class="card-image">
-                    <i class="fas fa-utensils" style="font-size: 48px; color: #8A2BE2;"></i>
+                    <i class="fas fa-utensils" style="font-size: 48px;"></i>
                 </div>
                 <h3 class="card-title">Restaurante Villa Hamburg</h3>
                 <p class="card-description">Culinária alemã tradicional com atmosfera acolhedora.</p>
@@ -75,9 +75,9 @@
                 <button class="btn" onclick="window.location.href='details.html'">Reservar Mesa</button>
             </div>
 
-            <div class="card">
+            <div class="card" data-category="restaurantes" data-price="$$" data-accessible="false">
                 <div class="card-image">
-                    <i class="fas fa-coffee" style="font-size: 48px; color: #8A2BE2;"></i>
+                    <i class="fas fa-coffee" style="font-size: 48px;"></i>
                 </div>
                 <h3 class="card-title">Café com Chocolate</h3>
                 <p class="card-description">Café aconchegante com opções para crianças.</p>
@@ -91,9 +91,9 @@
 
             <h2 style="color: #FFFFFF; margin: 24px 0 16px; font-size: 20px;">Entretenimento</h2>
 
-            <div class="card">
+            <div class="card" data-category="entretenimento" data-price="$$" data-accessible="false">
                 <div class="card-image">
-                    <i class="fas fa-building" style="font-size: 48px; color: #8A2BE2;"></i>
+                    <i class="fas fa-building" style="font-size: 48px;"></i>
                 </div>
                 <h3 class="card-title">Expoville</h3>
                 <p class="card-description">Centro de convenções com eventos culturais e shows.</p>
@@ -105,9 +105,9 @@
                 <button class="btn" onclick="window.location.href='details.html'">Ver Detalhes</button>
             </div>
 
-            <div class="card">
+            <div class="card" data-category="entretenimento" data-price="Grátis" data-accessible="true">
                 <div class="card-image">
-                    <i class="fas fa-tree" style="font-size: 48px; color: #8A2BE2;"></i>
+                    <i class="fas fa-tree" style="font-size: 48px;"></i>
                 </div>
                 <h3 class="card-title">Parque Zoobotânico Joinville</h3>
                 <p class="card-description">Parque com zoológico e jardim botânico, perfeito para passear.</p>
@@ -139,4 +139,58 @@
             Profile
         </a>
     </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.card');
+            const sections = document.querySelectorAll('section h2');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filter = this.textContent.toLowerCase();
+
+                    cards.forEach(card => {
+                        let show = true;
+
+                        if (filter === 'todos') {
+                            show = true;
+                        } else if (filter === 'acomodações') {
+                            show = card.dataset.category === 'acomodações';
+                        } else if (filter === 'restaurantes') {
+                            show = card.dataset.category === 'restaurantes';
+                        } else if (filter === 'entretenimento') {
+                            show = card.dataset.category === 'entretenimento';
+                        } else if (filter === '$') {
+                            show = card.dataset.price === '$';
+                        } else if (filter === '$$') {
+                            show = card.dataset.price === '$$';
+                        } else if (filter === '$$$') {
+                            show = card.dataset.price === '$$$';
+                        } else if (filter === 'acessível') {
+                            show = card.dataset.accessible === 'true';
+                        }
+
+                        card.style.display = show ? 'flex' : 'none';
+                    });
+
+                    // Hide empty sections
+                    sections.forEach(section => {
+                        const sectionCards = section.nextElementSibling.querySelectorAll('.card');
+                        let visibleCards = 0;
+                        sectionCards.forEach(card => {
+                            if (card.style.display !== 'none') visibleCards++;
+                        });
+                        section.style.display = visibleCards > 0 ? 'block' : 'none';
+                    });
+                });
+            });
+        });
+    </script>
 </body>
+</html>
